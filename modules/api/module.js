@@ -1,27 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var auth = require("./authentication/auth")
+var main = require("./main/main")
 var bloodBank = require('./bloodbanks/bloodBank')
-var donors = require('./donors/donor')
 
 
-// var checkConnection = {
-//     title: "check Connection",
-//     statusCode: constants.HTTP.CODES.SUCCESS
-//   }
+router.get('/', main.home);
+// router.get('*', main.notFound);
 
-router.get('/', auth.home);
 /**blood bank request handlers**/
-router.get('/bloodBanks', bloodBank.allBloodBanks);
-router.post('/addBloodBank', bloodBank.addBloodBanks);
-router.delete('/deleteBloodBank/:_bId', bloodBank.deleteBloodBank);
-/**blood donor request handlers**/
-router.get('/donors', donors.getDonor);
-router.post('/addDonor', donors.addDonor);
-router.delete('/deleteDonor/:_bId', donors.deleteDonor);
+router.get('/allBloodBankUser/:user', main.allBloodBankUsers);
+router.get('/bloodBankUser/:id', main.bloodBankUser);
+router.delete('/deleteBloodBankUser/:id', main.deleteBloodBankUser);
+router.put('/editBloodBankUser/:id', main.editBloodBankUsers);
+
 /**signup login request handlers**/
-router.post('/signup', auth.signup);
-router.post('/login', auth.login);
+router.post('/signup', main.signup);
+router.post('/login', main.login);
 
 
 

@@ -32,7 +32,7 @@ module.exports = {
             ERROR: "Operation Failed"
         },
         GENERAL: {
-            FIELDS_REQUIRED: "Input fields are missing or invalid, please provide the correct required fields."
+            FIELDS_REQUIRED: "Input fields are missing or invalid, password must be atleast 6 character only in lowercase."
         }
     }
 }
