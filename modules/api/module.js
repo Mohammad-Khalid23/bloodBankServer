@@ -4,7 +4,7 @@ var main = require("./main/main")
 var bloodBank = require('./bloodbanks/bloodBank')
 
 
-router.get('/', main.home);
+// router.get('/', main.home);
 // router.get('*', main.notFound);
 
 /**blood bank request handlers**/
